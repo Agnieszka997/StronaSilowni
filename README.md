@@ -1,2 +1,0 @@
-# StronaSilowni
-Strona Reklamujaca Silownie
