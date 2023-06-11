@@ -131,10 +131,11 @@
   <script>
     var currentIndex = 0;
     var carouselItems = document.querySelectorAll('.carousel-item');
+    var carouselWidth = document.querySelector('.carousel').offsetWidth;
 
     function showSlide(index) {
       carouselItems.forEach(function(item) {
-        item.style.transform = `translateX(-${index * 33.333}%`;
+        item.style.transform = `translateX(-${index * carouselWidth}px)`;
       });
     }
 
@@ -147,6 +148,8 @@
       currentIndex = (currentIndex + 1) % carouselItems.length;
       showSlide(currentIndex);
     }
+
+    showSlide(currentIndex);
   </script>
 </body>
 </html>
