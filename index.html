@@ -41,6 +41,50 @@
     }
   </style>
 </head>
+ <style>
+    .carousel {
+      width: 500px;
+      height: 300px;
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .carousel .carousel-inner {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel .carousel-item {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+    }
+
+    .carousel .carousel-controls {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .carousel .carousel-controls button {
+      background: transparent;
+      border: none;
+      font-size: 24px;
+      padding: 0 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
 <body>
   <div class="carousel">
     <div class="carousel-inner">
@@ -63,11 +107,10 @@
   <script>
     var currentIndex = 0;
     var carouselItems = document.querySelectorAll('.carousel-item');
-    var carouselWidth = document.querySelector('.carousel').offsetWidth;
 
     function showSlide(index) {
       carouselItems.forEach(function(item) {
-        item.style.transform = `translateX(-${index * carouselWidth}px)`;
+        item.style.transform = `translateX(-${index * 100}%)`;
       });
     }
 
@@ -80,8 +123,6 @@
       currentIndex = (currentIndex + 1) % carouselItems.length;
       showSlide(currentIndex);
     }
-
-    showSlide(currentIndex);
   </script>
 </body>
 <body>
